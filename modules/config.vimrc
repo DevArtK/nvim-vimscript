@@ -1,3 +1,7 @@
+
+filetype plugin indent on
+
+set backspace=start,eol,indent
 set encoding=utf-8 
 set noerrorbells                                                                
 syntax enable                                                                                                  
@@ -9,7 +13,6 @@ set autoread
 set nowrap                                                                      
 set incsearch                                                                   
 set hlsearch
-set backspace=start,eol,indent
 set showtabline=2
 set noshowmode
 set laststatus=2

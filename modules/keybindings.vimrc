@@ -58,7 +58,6 @@ inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
     \ coc#refresh()
-
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Use <c-space> to trigger completion.
@@ -85,9 +84,12 @@ endfun
 "                          " format on enter, <cr> could be remapped by other
 "                          vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                          \:
-                          \<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-"
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+
+
+
 "                          " filenames like *.xml, *.html, *.xhtml, ...
 "                          " These are the file extensions where this plugin
 "                          is enabled.
