@@ -15,6 +15,9 @@ Plug 'frazrepo/vim-rainbow'
 " ----- Vim Surround -----
 Plug 'tpope/vim-surround'
 
+" ----- Starify - Start Menu -----
+Plug 'mhinz/vim-startify'
+
 
 " ----- Light Line -----
 Plug 'itchyny/lightline.vim'
