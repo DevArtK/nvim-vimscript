@@ -42,6 +42,8 @@ Plug 'morhetz/gruvbox'
 Plug 'Erichain/vim-monokai-pro'
 Plug 'sainnhe/gruvbox-material'
 
+
+
 " ----- FZF Finder -----
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -52,11 +54,19 @@ Plug 'jremmen/vim-ripgrep'
 " ----- Signature (Marks In Buffer) ----
 Plug 'kshenoy/vim-signature'
 
+
+
+
 " ----- COC Completion -----
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ----- YCM Completion -----
 "Plug 'ycm-core/YouCompleteMe'
+
+" ----- Nvim LSP -----
+Plug 'neovim/nvim-lspconfig'
+
+
 
 "----- File Directory -----
 Plug 'preservim/nerdtree' |

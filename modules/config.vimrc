@@ -47,5 +47,5 @@ set backup " Keep a backup after overwriting a file.
 set writebackup " Write a backup file before overwriting a file.
 set backupdir=~/Code-Directory/Nvim/BackupDir " List of directories to put backup files
 " in.
-"
-"
+
+set completeopt=menuone,noinsert,noselect

@@ -7,6 +7,10 @@ autocmd VimEnter *
 \ | endif
 
 
+
+
+let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
+
 " ----- Nerd Tree -----
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
