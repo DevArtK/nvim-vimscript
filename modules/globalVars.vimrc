@@ -72,8 +72,10 @@ let g:syntastic_auto_loc_list=1
 
 " ----- LightLine Buffer -----
 
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline#bufferline#show_number = 1 
-
+let g:lightline#bufferline#show_number = 1 
+let g:rainbow_active = 1
 " ----- ----- Snippets Remaps ----- ----- -----
 
 " Trigger configuration. You need to change this to something else than <tab>

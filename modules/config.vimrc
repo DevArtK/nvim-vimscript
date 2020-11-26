@@ -16,6 +16,7 @@ set hlsearch
 set showtabline=2
 set noshowmode
 set laststatus=2
+set signcolumn=yes
 
 set tabstop=4 softtabstop=4 shiftwidth=4                                                   
 set autoindent smartindent expandtab
@@ -46,3 +47,5 @@ set backup " Keep a backup after overwriting a file.
 set writebackup " Write a backup file before overwriting a file.
 set backupdir=~/Code-Directory/Nvim/BackupDir " List of directories to put backup files
 " in.
+"
+"

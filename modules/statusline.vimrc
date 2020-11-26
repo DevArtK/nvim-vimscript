@@ -5,7 +5,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'filename',  'lineinfo' ],
       \    [ 'readonly', 'modified' ] ],
-      \    'right': [ ['gitbranch'],[ 'filetype' ] ]
+      \    'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
       \   
       \  },
       \ 'tabline': {
@@ -22,13 +22,12 @@ let g:lightline = {
       \  
       \  },  
       \ 'component_function': {
-      \     'gitbranch': 'FugitiveHead'
+      \     'gitbranch': 'FugitiveHead',
+      \     'cocstatus': 'coc#status'
       \ 
       \  },
       \  }
 
-let g:lightline#bufferline#show_number = 1 
-let g:rainbow_active = 1
 
 if has('nvim') || has('termguicolors')
       set termguicolors

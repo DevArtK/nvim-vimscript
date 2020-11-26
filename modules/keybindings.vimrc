@@ -10,10 +10,10 @@ nnoremap <leader>vs :vsplit<CR>
 nnoremap <leader>hs :hsplit<CR>
 
 nnoremap <Leader>1 :noh<CR>
-nnoremap <Leader>2 :w <CR> :!clear; python3 % <CR>
-nnoremap <Leader>3 :w <CR> :!clear; node % <CR>
+nnoremap <Leader>2 :!clear; python3 % <CR>
+nnoremap <Leader>3 :!clear; node % <CR>
 nnoremap <Leader>4 :!clear; g++ % && ./a.out<CR>
-nnoremap <Leader>5 :w <CR> :!clear; javac % <CR>
+nnoremap <Leader>5 :!clear; javac % <CR>
 
 
 "*-*-*-* Macro  *-*-*-*
@@ -27,10 +27,10 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-K> <C-W>k<C-W>_
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+"nnoremap <leader>h :wincmd h<CR>
+"nnoremap <leader>j :wincmd j<CR>
+"nnoremap <leader>k :wincmd k<CR>
+"nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>U :UndoTreeToggle<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
@@ -54,6 +54,7 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" tab trigger completion with chars ahead to nav
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
@@ -72,6 +73,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <buffer> <Leader>cr :CocRestart
+
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
  " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -101,7 +108,9 @@ endfunction
 " Coc -  Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 
 " ----- Nerd Tree -----"
@@ -137,16 +146,16 @@ nnoremap <leader>gw  :Gwrite<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 
-nmap 1 <Plug>lightline#bufferline#go(1)
-nmap 2 <Plug>lightline#bufferline#go(2)
-nmap 3 <Plug>lightline#bufferline#go(3)
-nmap 4 <Plug>lightline#bufferline#go(4)
-nmap 5 <Plug>lightline#bufferline#go(5)
-nmap 6 <Plug>lightline#bufferline#go(6)
-nmap 7 <Plug>lightline#bufferline#go(7)
-nmap 8 <Plug>lightline#bufferline#go(8)
-nmap 9 <Plug>lightline#bufferline#go(9)
-nmap 0 <Plug>lightline#bufferline#go(10)
+nmap <A>1 <Plug>lightline#bufferline#go(1)
+nmap <A>2 <Plug>lightline#bufferline#go(2)
+nmap <A>3 <Plug>lightline#bufferline#go(3)
+nmap <A>4 <Plug>lightline#bufferline#go(4)
+nmap <A>5 <Plug>lightline#bufferline#go(5)
+nmap <A>6 <Plug>lightline#bufferline#go(6)
+nmap <A>7 <Plug>lightline#bufferline#go(7)
+nmap <A>8 <Plug>lightline#bufferline#go(8)
+nmap <A>9 <Plug>lightline#bufferline#go(9)
+nmap <A>0 <Plug>lightline#bufferline#go(10)
 
 nmap <Leader>c1 <Plug>lightline#bufferline#delete(1)
 nmap <Leader>c2 <Plug>lightline#bufferline#delete(2)
