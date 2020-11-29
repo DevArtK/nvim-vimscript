@@ -64,7 +64,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ycm-core/YouCompleteMe'
 
 " ----- Nvim LSP -----
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
+" Need to Update to 0.5 HEAD (nightly), build from source/use appimage
 
 
 

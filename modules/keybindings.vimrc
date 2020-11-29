@@ -3,8 +3,8 @@ let maplocalleader = "\\"
 
 " -- Normal Mode Remaps
 nnoremap ; :
-noremap <Leader>q" ciw""<Esc>P
-noremap <Leader>q' ciw''<Esc>P
+"noremap <Leader>q" ciw""<Esc>P
+"noremap <Leader>q' ciw''<Esc>P
 
 nnoremap <leader>vs :vsplit<CR>
 nnoremap <leader>hs :hsplit<CR>
@@ -18,15 +18,18 @@ nnoremap <Leader>5 :!clear; javac % <CR>
 
 "*-*-*-* Macro  *-*-*-*
 let @q='ctrl + r ctrl + r q'
-"" Quotes Around Word Under Cursor
-let @a='viw<esc>a"<esc>bi"<esc>lel'
     
 " ----- Easier moving between windows + tabs
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
-map <C-K> <C-W>k<C-W>_
+"map <C-J> <C-W>j<C-W>_
+map <C-J> :bnext <CR>
+
+"map <C-K> <C-W>k<C-W>_
+map <C-K> :bprev <CR>
+
+"map <C-L> <C-W>l<C-W>_
+map <C-L> :bd <CR>
+
+"map <C-H> <C-W>h<C-W>_
 "nnoremap <leader>h :wincmd h<CR>
 "nnoremap <leader>j :wincmd j<CR>
 "nnoremap <leader>k :wincmd k<CR>
@@ -201,3 +204,10 @@ tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap :q! <C-\><C-n>:q!<CR>
+
+
+"----- ----- Visual Mode Maps
+vnoremap <A-J> :m '>+1<CR>gv=gv
+vnoremap <A-K> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
