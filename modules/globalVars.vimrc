@@ -7,6 +7,8 @@ autocmd VimEnter *
 \ | endif
 
 
+" Opens Directory Search on current level
+"autocmd BufEnter * lcd %:p:h
 
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']

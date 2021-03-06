@@ -15,6 +15,20 @@ nnoremap <Leader>3 :!clear; node % <CR>
 nnoremap <Leader>4 :!clear; g++ % && ./a.out<CR>
 nnoremap <Leader>5 :!clear; javac % <CR>
 
+nnoremap <Leader>w :w<CR>
+ 
+" Switch between relative and line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
+  endif
+endfunc
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>r :call NumberToggle()<cr>
 
 "*-*-*-* Macro  *-*-*-*
 let @q='ctrl + r ctrl + r q'
@@ -120,7 +134,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 "  autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle ..<CR>
 
 function! ToggleNERDTree()
     NERDTreeToggle
@@ -132,6 +146,11 @@ endfunction
 " = = = = = AutoCMD = = = = =
 " ----- Vertically Center Upon Insert -----
 autocmd InsertEnter * norm zz
+" Set the pwd to current fold | folder/file given when launching vim
+autocmd vimenter * silent! lcd %:p:h
+
+
+
 
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
@@ -147,7 +166,7 @@ nnoremap <leader>gs  :Gstatus<CR>
 nnoremap <leader>gw  :Gwrite<CR>
 
 nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
+nmap <leader>gJ :diffget //2<CR>
 
 nmap <A>1 <Plug>lightline#bufferline#go(1)
 nmap <A>2 <Plug>lightline#bufferline#go(2)
