@@ -58,5 +58,5 @@ set completeopt=menuone,noinsert,noselect
 
 
 
-  " Toggle between normal and relative numbering.
+  " Toggle between normal and relative numbering
   nnoremap <leader>r :call NumberToggle()<cr>

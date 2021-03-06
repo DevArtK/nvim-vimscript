@@ -82,17 +82,7 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline#bufferline#show_number = 1 
 let g:lightline#bufferline#show_number = 1 
 let g:rainbow_active = 1
-" ----- ----- Snippets Remaps ----- ----- -----
-
-" Trigger configuration. You need to change this to something else than <tab>
-" if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
+"
 " ----- ----- Snippets Remaps ----- ----- -----
 
 " Trigger configuration. You need to change this to something else than <tab>

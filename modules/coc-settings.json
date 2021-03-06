@@ -1,5 +1,5 @@
 "coc.preferences.formatOnSaveFiletypes": [
-        ;"go",
+        "go",
         "python",
         "markdown",
         "javascript",
