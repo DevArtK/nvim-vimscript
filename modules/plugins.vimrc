@@ -55,18 +55,16 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'kshenoy/vim-signature'
 
 
-
-
 " ----- COC Completion -----
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" ----- YCM Completion -----
-"Plug 'ycm-core/YouCompleteMe'
 
 " ----- Nvim LSP -----
 "Plug 'neovim/nvim-lspconfig'
+"Plug 'nvim-lua/completion-nvim'
+"Plug 'mattn/vim-lsp-settings'
+"Plug 'kabouzeid/nvim-lspinstall'
 " Need to Update to 0.5 HEAD (nightly), build from source/use appimage
-
 
 
 "----- File Directory -----
@@ -87,10 +85,14 @@ Plug 'vim-python/python-syntax'
 " ----- Syntastic -----
 Plug 'vim-Syntastic/syntastic'
 
-" ----- Ale ------
-Plug 'dense-analysis/ale'
-
 " ----- Colorizer -----
 Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
+
+
+" =============== Server Configs ================
+" $HOME/.local/share/vim-lsp-settings/servers
+" $XDG_DATA_HOME/vim-lsp-settings/servers
+
+

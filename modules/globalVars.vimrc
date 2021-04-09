@@ -1,3 +1,4 @@
+"autocmd BufEnter * lua require'completion'.on_attach()
 
 autocmd VimEnter *
        \   if !argc()
@@ -7,8 +8,20 @@ autocmd VimEnter *
 \ | endif
 
 
-" Opens Directory Search on current level
+"Opens Directory Search on current level
 "autocmd BufEnter * lcd %:p:h
+
+
+let g:kite_supported_languages = ['*']
+let g:kite_auto_complete=1
+let g:kite_tab_complete=1 
+set completeopt+=menuone 
+"+=noselect += preview
+
+autocmd CompleteDone * if !pumvisible() | pclose | endif
+let g:kite_previous_placeholder = '<C-H>'
+let g:kite_next_placeholder = '<C-L>'
+
 
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
@@ -17,7 +30,7 @@ let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeQuitOnOpen = 1
-let NERDTreeDirArrows = 1
+let NERDTreeDirArrows = 1  
 
 " ----- ----- HTML Types, JSX, CSS ----- -----
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
@@ -48,7 +61,7 @@ let g:closetag_emptyTags_caseSensitive = 1
 
 
 " --- FZF --- FZF --- --- ----
-"let g:fzf_preview_window = 'right:60%'
+let g:fzf_preview_window = 'right:60%'
 
 
 "" --- vim go (polyglot) settings.
@@ -93,3 +106,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
+autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
+autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2

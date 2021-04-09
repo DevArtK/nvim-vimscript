@@ -3,14 +3,16 @@
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'active': {
-      \   'left': [ [ 'mode', 'filename',  'lineinfo' ],
+      \
+      \   'left': [ [ 'mode', 'lineinfo', 'filename' ],
       \    [ 'readonly', 'modified' ] ],
-      \    'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
+      \
+      \   'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
       \   
       \  },
       \ 'tabline': {
       \     'left': [['buffers']],
-      \     'right': [['close']]
+      \     'right': [['absolutepath']]
       \  
       \  },
       \ 'component_expand':{
