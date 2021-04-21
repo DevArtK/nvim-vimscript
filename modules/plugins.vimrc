@@ -37,8 +37,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'Erichain/vim-monokai-pro'
 Plug 'sainnhe/gruvbox-material'
 
