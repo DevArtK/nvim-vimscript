@@ -18,7 +18,6 @@ Plug 'tpope/vim-surround'
 " ----- Starify - Start Menu -----
 Plug 'mhinz/vim-startify'
 
-
 " ----- Light Line -----
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -41,22 +40,14 @@ Plug 'lifepillar/vim-gruvbox8'
 "Plug 'Erichain/vim-monokai-pro'
 "Plug 'sainnhe/gruvbox-material'
 
-
-" ----- FZF Finder -----
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'hankchiutw/nerdtree-ranger.vim'
-
 " ----- RipGrep -----
 Plug 'jremmen/vim-ripgrep'
 
 " ----- Signature (Marks In Buffer) ----
 Plug 'kshenoy/vim-signature'
 
-
 " ----- COC Completion -----
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 
 " ----- Nvim LSP -----
 "Plug 'neovim/nvim-lspconfig'
@@ -84,6 +75,11 @@ Plug 'vim-python/python-syntax'
 
 " ----- Syntastic -----
 Plug 'vim-Syntastic/syntastic'
+
+" ----- FZF Finder -----
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'hankchiutw/nerdtree-ranger.vim'
 
 " ----- Colorizer -----
 Plug 'norcalli/nvim-colorizer.lua'
