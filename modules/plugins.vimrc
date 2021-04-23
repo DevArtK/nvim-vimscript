@@ -36,17 +36,16 @@ Plug 'easymotion/vim-easymotion'
 " ----- Themes -----
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'Erichain/vim-monokai-pro'
-Plug 'sainnhe/gruvbox-material'
-
+"Plug 'Erichain/vim-monokai-pro'
+"Plug 'sainnhe/gruvbox-material'
 
 
 " ----- FZF Finder -----
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'hankchiutw/nerdtree-ranger.vim'
 
 " ----- RipGrep -----
 Plug 'jremmen/vim-ripgrep'
@@ -78,6 +77,7 @@ Plug 'mbbill/undotree'
 
 " ----- Snippets -----
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " ----- Python Syntax Highlighting -----
 Plug 'vim-python/python-syntax'

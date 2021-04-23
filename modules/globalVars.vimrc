@@ -9,20 +9,7 @@ autocmd VimEnter *
 
 
 "Opens Directory Search on current level
-"autocmd BufEnter * lcd %:p:h
-
-
-let g:kite_supported_languages = ['*']
-let g:kite_auto_complete=1
-let g:kite_tab_complete=1 
-set completeopt+=menuone 
-"+=noselect += preview
-
-autocmd CompleteDone * if !pumvisible() | pclose | endif
-let g:kite_previous_placeholder = '<C-H>'
-let g:kite_next_placeholder = '<C-L>'
-
-
+autocmd BufEnter * lcd %:p:h
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 
@@ -61,8 +48,38 @@ let g:closetag_emptyTags_caseSensitive = 1
 
 
 " --- FZF --- FZF --- --- ----
-let g:fzf_preview_window = 'right:60%'
+"let g:fzf_preview_window = 'right:60%'
+let g:fzf_preview_window = ['right:30%', 'ctrl-/']
+let g:fzf_buffers_jump = 1
 
+" Terminal Function
+let g:term_buf = 0
+let g:term_win = 0
+function! TermToggle(height)
+    if win_gotoid(g:term_win)
+        hide
+    else
+        botright new
+        exec "resize " . a:height
+        try
+            exec "buffer " . g:term_buf
+        catch
+            call termopen($SHELL, {"detach": 0})
+            let g:term_buf = bufnr("")
+            set nonumber
+            set norelativenumber
+            set signcolumn=no
+        endtry
+        startinsert!
+        let g:term_win = win_getid()
+    endif
+endfunction
+
+
+" Toggle terminal on/off (neovim)
+nnoremap <A-t> :call TermToggle(12)<CR>
+inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 
 "" --- vim go (polyglot) settings.
 let g:go_highlight_build_constraints = 1
@@ -81,7 +98,7 @@ let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48:2;%lu;%lu;%lum"
 
 " ----- Syntastic Config -----
 let g:syntastic_mode_map={'mode': 'passive'}
@@ -90,22 +107,11 @@ let g:syntastic_check_on_wq=1
 let g:syntastic_auto_loc_list=1
 
 " ----- LightLine Buffer -----
-
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline#bufferline#show_number = 1 
 let g:lightline#bufferline#show_number = 1 
 let g:rainbow_active = 1
-"
-" ----- ----- Snippets Remaps ----- ----- -----
 
-" Trigger configuration. You need to change this to something else than <tab>
-" if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
