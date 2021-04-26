@@ -48,7 +48,10 @@ map <leader><leader>w <Plug>(easymotion-bd-w)
 map <leader><leader>e <Plug>(easymotion-bd-e)
 
 "----- Yank from cursor to end line Consistant with C and D
-nnoremap Y y$"
+"nnoremap Y y$"
+" Yanks everything into the + register for system clipboard
+nnoremap Y "+y
+vnoremap Y "+y
 
 " ----- FZF -----
 nnoremap <C-p> :FZF<CR>
