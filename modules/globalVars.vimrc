@@ -1,4 +1,4 @@
-"autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufEnter * lua require'completion'.on_attach()
 
 autocmd VimEnter *
        \   if !argc()
@@ -6,12 +6,15 @@ autocmd VimEnter *
        "\ |   wincmd q
        "\ |   NERDTree
 \ | endif
-
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 "Opens Directory Search on current level
 autocmd BufEnter * lcd %:p:h
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
+let g:completion_enable_snippet = 'UltiSnips'
 
 " ----- Nerd Tree -----
 let NERDTreeAutoDeleteBuffer = 1

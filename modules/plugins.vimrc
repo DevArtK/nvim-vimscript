@@ -34,9 +34,8 @@ Plug 'easymotion/vim-easymotion'
 
 " ----- Themes -----
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'joshdick/onedark.vim'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-gruvbox8'
+"Plug 'vim-airline/vim-airline-themes'
 "Plug 'Erichain/vim-monokai-pro'
 "Plug 'sainnhe/gruvbox-material'
 
@@ -50,8 +49,18 @@ Plug 'kshenoy/vim-signature'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ----- Nvim LSP -----
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+Plug 'mfussenegger/nvim-jdtls'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
+Plug 'mfussenegger/nvim-jdtls'
 "Plug 'mattn/vim-lsp-settings'
 "Plug 'kabouzeid/nvim-lspinstall'
 " Need to Update to 0.5 HEAD (nightly), build from source/use appimage

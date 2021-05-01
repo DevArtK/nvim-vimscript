@@ -5,7 +5,9 @@ let maplocalleader = "\\"
 nnoremap ; :
 "noremap <Leader>q" ciw""<Esc>P
 "noremap <Leader>q' ciw''<Esc>P
-
+" Fixes indentation
+vnoremap > >gv 
+vnoremap < <gv
 nnoremap <leader>vs :vsplit<CR>
 nnoremap <leader>hs :hsplit<CR>
 

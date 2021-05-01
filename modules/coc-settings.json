@@ -1,3 +1,12 @@
+{
+  "diagnostic.displayByAle": true,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "suggest.autoTrigger": "trigger",
+  "suggest.noselect": false,
+  "snippets.priority": 100,
+  "metals.statusBarEnabled": true,
+  "coc.preferences.formatOnType":true,
+},
 "coc.preferences.formatOnSaveFiletypes": [
         "go",
         "python",
@@ -6,6 +15,6 @@
         "typescript",
         "json",
         "jsonc"
-                                  
-]
+],
+
 
