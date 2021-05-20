@@ -1,13 +1,14 @@
 
 " -----Status Bar -----
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'gruvbox8',
       \ 'active': {
       \
-      \   'left': [ [ 'mode', 'lineinfo', 'filename' ],
+      \   'left': [ [ 'mode', 'lineinfo' ],
       \    [ 'readonly', 'modified' ] ],
       \
-      \   'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
+      "\   'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
+      \   'right': [ [  'filename', 'filetype'], ['cocstatus'] ]
       \   
       \  },
       \ 'tabline': {
@@ -34,3 +35,4 @@ let g:lightline = {
 if has('nvim') || has('termguicolors')
       set termguicolors
   endif
+

@@ -1,4 +1,5 @@
-autocmd BufEnter * lua require'completion'.on_attach()
+"autocmd BufEnter * lua require'completion'.on_attach()
+
 
 autocmd VimEnter *
        \   if !argc()
@@ -11,10 +12,15 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 "Opens Directory Search on current level
+
 autocmd BufEnter * lcd %:p:h
 
+" Completion
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 let g:completion_enable_snippet = 'UltiSnips'
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ----- Nerd Tree -----
 let NERDTreeAutoDeleteBuffer = 1
@@ -80,44 +86,38 @@ endfunction
 
 
 " Toggle terminal on/off (neovim)
-nnoremap <A-t> :call TermToggle(12)<CR>
-inoremap <A-t> <Esc>:call TermToggle(12)<CR>
-tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
-
-"" --- vim go (polyglot) settings.
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_highlight_function_parameters = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_format_strings = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_auto_sameids = 1
+nnoremap <A-t> :call TermToggle(10)<CR>
+inoremap <A-t> <Esc>:call TermToggle(10)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(10)<CR>
 
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48:2;%lu;%lu;%lum"
 
 " ----- Syntastic Config -----
-let g:syntastic_mode_map={'mode': 'passive'}
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_wq=1
-let g:syntastic_auto_loc_list=1
+"let g:syntastic_mode_map={'mode': 'passive'}
+"let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_check_on_wq=1
+"let g:syntastic_auto_loc_list=1
 
 " ----- LightLine Buffer -----
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline#bufferline#show_number = 1 
-let g:lightline#bufferline#show_number = 1 
+
+" ----- Rainbow brackets
 let g:rainbow_active = 1
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 
 
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2

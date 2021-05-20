@@ -1,0 +1,48 @@
+https://github.com/tree-sitter/tree-sitter
+
+https://neovim.io/doc/user/lsp.html
+
+https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060
+
+https://www.google.com/search?channel=fs&client=ubuntu&q=neovim+.5+lsp+guide
+
+https://expectationmax.github.io/2020/NeoVims-Language-Server-Client/
+
+https://github.com/mfussenegger/dotfiles/blob/3015392aed49125bb6d9bf6be8afbab020ac2157/playbooks/roles/lang-java/tasks/main.yml#L1-L39
+
+https://github.com/sumneko/lua-language-server/wiki/Setting-without-VSCode
+https://github.com/mfussenegger/dotfiles/blob/89a0acc43ac1d8c2ee475a00b8a448a23b8c1c26/vim/.config/nvim/lua/lsp-config.lua#L126-L196
+
+
+
+
+
+/etc/profile.d gradle.sh & jdtls...
+export JAR=/usr/lib/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar
+export GRADLE_HOME=/usr/local/gradle/_____
+export JAVA_HOME=/usr/lib/jvm/java-11-opendk-amd64/
+export JDTLS_CONFIG=/lib/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux
+export WORKSPACE=$HOME/Code/Java/
+https://gitlab.com/mcepl/vimdir/blob/master/plugin/lsp_servers.vim
+
+
+https://github.com/nvim-lua/popup.nvim
+
+
+https://github.com/nvim-lua/plenary.nvim
+
+
+https://github.com/nvim-telescope/telescope.nvim
+
+
+https://github.com/tree-sitter/tree-sitter
+
+
+https://github.com/mfussenegger/nvim-dap
+https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
+
+
+https://github.com/glepnir/galaxyline.nvim
+
+
+

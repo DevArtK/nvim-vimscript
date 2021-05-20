@@ -3,20 +3,24 @@ filetype plugin indent on
 set backspace=start,eol,indent
 set encoding=utf-8 
 set fileencoding=utf-8
-set noerrorbells                                                                
 syntax enable                                                                                                  
+set nospell                                                                       
+set incsearch                                                                   
+set hlsearch
+set ignorecase
+set smartcase
+
+set noerrorbells                                                                
 set hidden
 set termguicolors
 set title
-set spell                                                                       
 set autoread
 set nowrap                                                                      
-set incsearch                                                                   
-set hlsearch
 set showtabline=2
 set noshowmode
 set laststatus=2
 set signcolumn=yes
+
 
 set tabstop=2 softtabstop=2 shiftwidth=2                                                   
 set smarttab
@@ -35,7 +39,7 @@ set history=100
 set t_Co=256                                                                    
 set rulerformat=%l\:%c                                                          
 
-set pumheight=20                                                                
+set pumheight=30                                                                
 set cmdheight=1
 set updatetime=300
 set showcmd                                                                     
@@ -52,7 +56,20 @@ set undodir=~/Documents/Backups/Nvim/UndoDir
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set autowrite
 
+set wildmode=longest,list,full
+set wildmenu
 set completeopt=menuone,noinsert,noselect,preview
 set shortmess+=c
+
+set splitbelow
+set splitright
+" Auto adjust window sizes when they become current {{{2
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
+set ttyfast
+set lazyredraw
 
 lua require'colorizer'.setup()

@@ -6,14 +6,12 @@
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" ----- Saga -----
+Plug 'glepnir/lspsaga.nvim'
+
 " ----- Emmet -----
 Plug 'mattn/emmet-vim'
 
-" -----  Rainbow Bracket -----
-Plug 'frazrepo/vim-rainbow'
-
-" ----- Vim Surround -----
-Plug 'tpope/vim-surround'
 
 " ----- Starify - Start Menu -----
 Plug 'mhinz/vim-startify'
@@ -22,11 +20,11 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 
-" ----- Language Packages -----
-Plug 'sheerun/vim-polyglot'
 
 " ----- Auto Bracket Pairs -----
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
+"Plug 'tmsvg/pear-tree'
 Plug 'alvan/vim-closetag'
 
 " ----- Easy Motion -----
@@ -56,20 +54,25 @@ Plug 'mfussenegger/nvim-jdtls'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+" ----- Language Packages -----
+"Plug 'sheerun/vim-polyglot'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" ----- LSPs -----
+" Need to Update to 0.5 HEAD (nightly), build from source/use appimage
 Plug 'mfussenegger/nvim-jdtls'
 "Plug 'mattn/vim-lsp-settings'
 "Plug 'kabouzeid/nvim-lspinstall'
-" Need to Update to 0.5 HEAD (nightly), build from source/use appimage
 
 
 "----- File Directory -----
 Plug 'preservim/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
+
 " ----- VimSpector -----
 Plug 'puremourning/vimspector'
 " ----- Undo Tree -----
@@ -79,17 +82,17 @@ Plug 'mbbill/undotree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" ----- Python Syntax Highlighting -----
-Plug 'vim-python/python-syntax'
-
-" ----- Syntastic -----
-Plug 'vim-Syntastic/syntastic'
-
 " ----- FZF Finder -----
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'hankchiutw/nerdtree-ranger.vim'
 
+" -----  Rainbow Bracket -----
+Plug 'p00f/nvim-ts-rainbow'
+"Plug 'frazrepo/vim-rainbow'
+
+" ----- Vim Surround -----
+Plug 'tpope/vim-surround'
 " ----- Colorizer -----
 Plug 'norcalli/nvim-colorizer.lua'
 
