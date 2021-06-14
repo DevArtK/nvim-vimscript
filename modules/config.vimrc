@@ -46,9 +46,9 @@ set showcmd
 
 
 set noswapfile                                                                  
-set backup " Keep a backup after overwriting a file.
-set writebackup " Write a backup file before overwriting a file.
+set nowritebackup " Write a backup file before overwriting a file.
 set backupdir=~/Documents/Backups/Nvim/BackupDir " List of directories to put backup files
+set nobackup " Keep a backup after overwriting a file.
 set undofile       
 set undodir=~/Documents/Backups/Nvim/UndoDir
 
