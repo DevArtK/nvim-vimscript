@@ -58,7 +58,8 @@ set autowrite
 
 set wildmode=longest,list,full
 set wildmenu
-set completeopt=menuone,noinsert,noselect,preview
+"set completeopt=menuone,noinsert,noselect,preview
+set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 set splitbelow

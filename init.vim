@@ -51,52 +51,15 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-local saga = require 'lspsaga'
-
--- add your config value here
--- default value
--- use_saga_diagnostic_sign = true
--- error_sign = '',
--- warn_sign = '',
--- hint_sign = '',
--- infor_sign = '',
--- dianostic_header_icon = '   ',
--- code_action_icon = ' ',
--- code_action_prompt = {
---   enable = true,
---   sign = true,
---   sign_priority = 20,
---   virtual_text = true,
--- },
--- finder_definition_icon = '  ',
--- finder_reference_icon = '  ',
--- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
--- finder_action_keys = {
---   open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
--- },
--- code_action_keys = {
---   quit = 'q',exec = '<CR>'
--- },
--- rename_action_keys = {
---   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
--- },
--- definition_preview_icon = '  '
--- "single" "double" "round" "plus"
--- border_style = "single"
--- rename_prompt_prefix = '➤',
--- if you don't use nvim-lspconfig you must pass your server name and
--- the related filetypes into this table
--- like server_filetype_map = {metals = {'sbt', 'scala'}}
--- server_filetype_map = {}
-
-
 
 
 
 require'lspconfig'.jdtls.setup{}
 --require("lsp")
 
-require'lspconfig'.tsserver.setup{on_attach = on_attach}
+require'lspconfig'.tsserver.setup{
+  on_attach = require'completion'.on_attach
+  }
 
 require('nvim-autopairs').setup()
 
@@ -190,9 +153,50 @@ require('telescope').setup{
 
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+
+
+
+
   }
 }
 
+  local saga = require 'lspsaga'
+
+  -- add your config value here
+  -- default value
+  -- use_saga_diagnostic_sign = true
+  -- error_sign = '',
+  -- warn_sign = '',
+  -- hint_sign = '',
+  -- infor_sign = '',
+  -- dianostic_header_icon = '   ',
+  -- code_action_icon = ' ',
+  -- code_action_prompt = {
+  --   enable = true,
+  --   sign = true,
+  --   sign_priority = 20,
+  --   virtual_text = true,
+  -- },
+  -- finder_definition_icon = '  ',
+  -- finder_reference_icon = '  ',
+  -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+  -- finder_action_keys = {
+  --   open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+  -- },
+  -- code_action_keys = {
+  --   quit = 'q',exec = '<CR>'
+  -- },
+  -- rename_action_keys = {
+  --   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+  -- },
+  -- definition_preview_icon = '  '
+  -- "single" "double" "round" "plus"
+  -- border_style = "single"
+  -- rename_prompt_prefix = '➤',
+  -- if you don't use nvim-lspconfig you must pass your server name and
+  -- the related filetypes into this table
+  -- like server_filetype_map = {metals = {'sbt', 'scala'}}
+  -- server_filetype_map = {}
 EOF
 
 "if has('nvim-0.5')

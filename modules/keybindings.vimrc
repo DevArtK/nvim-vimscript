@@ -67,9 +67,8 @@ nnoremap Y "+y
 
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <C-Tab>   pumvisible() ? "\<C-n>" : "\<C-Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 
 " ----- Nerd Tree -----"
 "  autocmd vimenter * NERDTree

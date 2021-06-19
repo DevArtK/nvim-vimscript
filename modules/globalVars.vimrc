@@ -15,45 +15,25 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 autocmd BufEnter * lcd %:p:h
 
-" Completion
-let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
-let g:completion_enable_snippet = 'UltiSnips'
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" ----- Completion -----
+let g:completion_matching_strategy_list=['fuzzy', 'substring', 'exact']
+let g:completion_enable_auto_hover = 1
+" possible value: "length", "alphabet", "none" ; decides how items are sorted
+let g:completion_sorting = "length"
+
+let g:completion_matching_smart_case = 1
+" let g:completion_matching_ignore_case = 1
+let g:completion_enable_auto_paren = 1
+let g:completion_enable_auto_signature = 0
+let g:completion_enable_snippet = 'UltiSnips'
 
 " ----- Nerd Tree -----
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeDirArrows = 1  
-
-" ----- ----- HTML Types, JSX, CSS ----- -----
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-"
-" filenames like *.xml, *.xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified
-" files.
-
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
-
-let g:closetag_filetypes = 'html,xhtml,phtml'
-
-" filetypes like xml, xhtml, ...
-"This will make the list of non-closing tags self-closing in the specified
-" files.
-
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>`
-" will be closed while `<link>` won't.)
-" "
-let g:closetag_emptyTags_caseSensitive = 1
-
 
 
 " --- FZF --- FZF --- --- ----
@@ -93,11 +73,6 @@ tnoremap <A-t> <C-\><C-n>:call TermToggle(10)<CR>
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48:2;%lu;%lu;%lum"
 
-" ----- Syntastic Config -----
-"let g:syntastic_mode_map={'mode': 'passive'}
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_check_on_wq=1
-"let g:syntastic_auto_loc_list=1
 
 " ----- LightLine Buffer -----
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
@@ -117,11 +92,4 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 
 
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
-autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
-autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
