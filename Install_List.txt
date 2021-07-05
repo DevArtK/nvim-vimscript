@@ -1,0 +1,4 @@
+npm install -g diagnostic-languageserver
+npm i -g eslint_d prettier
+
+

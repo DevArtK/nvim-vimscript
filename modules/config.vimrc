@@ -3,6 +3,8 @@ filetype plugin indent on
 set backspace=start,eol,indent
 set encoding=utf-8 
 set fileencoding=utf-8
+set shell=fish
+
 syntax enable                                                                                                  
 set nospell                                                                       
 set incsearch                                                                   
@@ -53,24 +55,28 @@ set undofile
 set undodir=~/Documents/Backups/Nvim/UndoDir
 
 " in.
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/node_modules/*
 set autowrite
 
-set wildmode=longest,list,full
 set wildmenu
-"set completeopt=menuone,noinsert,noselect,preview
+set wildmode=longest,list,full
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
+
 
 set splitbelow
 set splitright
 " Auto adjust window sizes when they become current {{{2
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
+"set winwidth=84
+"set winheight=5
+"set winminheight=5
+"set winheight=999
 
 set ttyfast
 set lazyredraw
+
+if has('nvim')
+  set inccommand=split
+endif
 
 lua require'colorizer'.setup()

@@ -50,6 +50,12 @@ map <C-L> :bd <CR>
 
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
+
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
+
 " Netrw
 nnoremap <leader><leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
@@ -67,7 +73,7 @@ nnoremap Y "+y
 
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <C-Tab>   pumvisible() ? "\<C-n>" : "\<C-Tab>"
+inoremap <expr> <C-Tab> pumvisible() ? "\<C-n>" : "\<C-Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ----- Nerd Tree -----"
@@ -86,6 +92,7 @@ endfunction
 " = = = = = AutoCMD = = = = =
 " ----- Vertically Center Upon Insert -----
 autocmd InsertEnter * norm zz
+
 " Set the pwd to current fold | folder/file given when launching vim
 autocmd vimenter * silent! lcd %:p:h
 
@@ -126,20 +133,3 @@ tnoremap :bd! <C-\><C-n>:q!<CR>
 "noremap <Leader>q' ciw''<Esc>P
 
 
-" ----- SAGA
-"  -- code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-"-- or use command
-"nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-"vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR
-
-"-- show hover doc
-nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-"-- or use command
-"nnoremap <silent>K :Lspsaga hover_doc<CR>
-
-"-- scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-"-- scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>

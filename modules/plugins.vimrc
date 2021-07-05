@@ -6,12 +6,8 @@
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" ----- Saga -----
-Plug 'glepnir/lspsaga.nvim'
-
 " ----- Emmet -----
 Plug 'mattn/emmet-vim'
-
 
 " ----- Starify - Start Menu -----
 Plug 'mhinz/vim-startify'
@@ -20,11 +16,8 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 
-
 " ----- Auto Bracket Pairs -----
-"Plug 'jiangmiao/auto-pairs'
 Plug 'windwp/nvim-autopairs'
-"Plug 'tmsvg/pear-tree'
 Plug 'alvan/vim-closetag'
 
 " ----- Easy Motion -----
@@ -33,9 +26,7 @@ Plug 'easymotion/vim-easymotion'
 " ----- Themes -----
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'lifepillar/vim-gruvbox8'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'Erichain/vim-monokai-pro'
-"Plug 'sainnhe/gruvbox-material'
+Plug 'ryanoasis/vim-devicons'
 
 " ----- RipGrep -----
 Plug 'jremmen/vim-ripgrep'
@@ -44,29 +35,8 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'kshenoy/vim-signature'
 
 " ----- COC Completion -----
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" ----- Nvim LSP -----
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-
-Plug 'mfussenegger/nvim-jdtls'
-
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-
-" ----- Language Packages -----
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'sheerun/vim-polyglot'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-
-" ----- LSPs -----
-" Need to Update to 0.5 HEAD (nightly), build from source/use appimage
-Plug 'mfussenegger/nvim-jdtls'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'kabouzeid/nvim-lspinstall'
-
 
 "----- File Directory -----
 Plug 'preservim/nerdtree' |
@@ -95,6 +65,29 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-surround'
 " ----- Colorizer -----
 Plug 'norcalli/nvim-colorizer.lua'
+
+if has("nvim")
+    " ----- Nvim LSP -----
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+
+    Plug 'mfussenegger/nvim-jdtls'
+
+    " ----- Saga -----
+    Plug 'glepnir/lspsaga.nvim'
+
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+
+    " ----- Language Packages -----
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+
+    " ----- LSPs -----
+    Plug 'mfussenegger/nvim-jdtls'
+
+endif
 
 call plug#end()
 
