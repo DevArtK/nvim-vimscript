@@ -47,6 +47,7 @@ set updatetime=300
 set showcmd                                                                     
 
 
+set path+=** " Search down into subfolders
 set noswapfile                                                                  
 set nowritebackup " Write a backup file before overwriting a file.
 set backupdir=~/Documents/Backups/Nvim/BackupDir " List of directories to put backup files
@@ -80,3 +81,8 @@ if has('nvim')
 endif
 
 lua require'colorizer'.setup()
+
+
+
+
+

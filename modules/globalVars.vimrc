@@ -17,17 +17,6 @@ autocmd BufEnter * lcd %:p:h
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" ----- Completion -----
-let g:completion_matching_strategy_list=['fuzzy', 'substring', 'exact']
-let g:completion_enable_auto_hover = 1
-" possible value: "length", "alphabet", "none" ; decides how items are sorted
-let g:completion_sorting = "length"
-
-let g:completion_matching_smart_case = 1
-" let g:completion_matching_ignore_case = 1
-let g:completion_enable_auto_paren = 1
-let g:completion_enable_auto_signature = 0
-let g:completion_enable_snippet = 'UltiSnips'
 
 " ----- Nerd Tree -----
 let NERDTreeAutoDeleteBuffer = 1
@@ -75,7 +64,6 @@ let &t_8b="\<Esc>[48:2;%lu;%lu;%lum"
 
 
 " ----- LightLine Buffer -----
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 let g:lightline#bufferline#show_number = 1 
 
 " ----- Rainbow brackets
@@ -92,4 +80,19 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 
 
+" File types ---------------------------------------------------------------------
+"
+" JavaScript
+au BufNewFile,BufRead *.es6 setf javascript
+" TypeScript
+au BufNewFile,BufRead *.tsx setf typescriptreact
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+" Flow
+au BufNewFile,BufRead *.flow set filetype=javascript
 
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+" ---------------------------------------------------------------------
