@@ -29,7 +29,7 @@ require('telescope').setup{
       },
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
+    file_ignore_patterns = {"./node_modules/*", "node_modules"},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     shorten_path = true,
     winblend = 0,
@@ -48,10 +48,16 @@ require('telescope').setup{
 }
 EOF
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>
+nnoremap <leader>fF <cmd>lua require('telescope.builtin').file_browser({)<cr>
+
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fG <cmd>lua require('telescope.builtin').git_files()<cr>
+
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 
 " Find files using Telescope command-line sugar.
 "nnoremap <leader>ff <cmd>Telescope find_files<cr>

@@ -24,9 +24,10 @@ Plug 'alvan/vim-closetag'
 Plug 'easymotion/vim-easymotion'
 
 " ----- Themes -----
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'sainnhe/gruvbox-material'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 " ----- RipGrep -----
 Plug 'jremmen/vim-ripgrep'

@@ -27,8 +27,8 @@ let NERDTreeDirArrows = 1
 
 " --- FZF --- FZF --- --- ----
 "let g:fzf_preview_window = 'right:60%'
-let g:fzf_preview_window = ['right:30%', 'ctrl-/']
-let g:fzf_buffers_jump = 1
+"let g:fzf_preview_window = ['right:30%', 'ctrl-/']
+"let g:fzf_buffers_jump = 1
 
 " Terminal Function
 let g:term_buf = 0

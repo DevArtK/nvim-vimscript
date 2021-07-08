@@ -1,7 +1,9 @@
 
 " -----Status Bar -----
+"
+"\ 'colorscheme': 'gruvbox8',
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox8',
+      \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \
       \   'left': [ [ 'mode', 'lineinfo' ],

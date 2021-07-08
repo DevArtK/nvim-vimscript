@@ -60,7 +60,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*/node_modules/*
 set autowrite
 
 set wildmenu
-set wildmode=longest,list,full
+set wildmode=lastused,list,full
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
@@ -81,8 +81,3 @@ if has('nvim')
 endif
 
 lua require'colorizer'.setup()
-
-
-
-
-

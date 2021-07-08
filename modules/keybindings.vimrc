@@ -8,10 +8,10 @@ vnoremap > >gv
 vnoremap < <gv
 
 " View-ports : Splits
-nnoremap <leader>hs :split<CR>
-nnoremap <leader>Hs :vsplit<CR>
+"nnoremap <leader>hs :split<CR>
+"nnoremap <leader>Hs :vsplit<CR>
 
-nnoremap <Leader>! :noh<CR>
+"nnoremap <Leader>! :noh<CR>
 nnoremap <Leader>2 :!node % <CR>
 nnoremap <Leader>3 :!javac % <CR>
 nnoremap <Leader>3 :!python3 % <CR>
@@ -21,9 +21,12 @@ nnoremap <Leader>W :w<CR>
  
 " Add Quotes Around word
 noremap <Leader>q" ciw""<Esc>P
-" Delete Quotes around word
 nnoremap <Leader>Q daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
+noremap <Leader>q{ c{}<Esc>P
+noremap <Leader>q( c()<Esc>P
+noremap <Leader>q[ c[]<Esc>P
+" Delete Quotes around word
 
 
 " Switch between relative and line numbers
