@@ -38,7 +38,7 @@ set cursorcolumn
 set sidescrolloff=5
 set sidescrolloff=5
 set history=100                                                                 
-set t_Co=256                                                                    
+"set t_Co=256                                                                    
 set rulerformat=%l\:%c                                                          
 
 set pumheight=30                                                                
@@ -67,6 +67,7 @@ set shortmess+=c
 
 set splitbelow
 set splitright
+
 " Auto adjust window sizes when they become current {{{2
 "set winwidth=84
 "set winheight=5

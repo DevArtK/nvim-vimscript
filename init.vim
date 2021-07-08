@@ -7,4 +7,3 @@ source $HOME/.config/nvim/modules/globalVars.vimrc
 source $HOME/.config/nvim/modules/keybindings.vimrc
 source $HOME/.config/nvim/modules/startify-Custom.vimrc
 
-"source $HOME/.config/nvim/modules/coc-settings.vimrc

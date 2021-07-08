@@ -25,10 +25,6 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeDirArrows = 1  
 
 
-" --- FZF --- FZF --- --- ----
-"let g:fzf_preview_window = 'right:60%'
-"let g:fzf_preview_window = ['right:30%', 'ctrl-/']
-"let g:fzf_buffers_jump = 1
 
 " Terminal Function
 let g:term_buf = 0
@@ -59,8 +55,6 @@ nnoremap <A-t> :call TermToggle(10)<CR>
 inoremap <A-t> <Esc>:call TermToggle(10)<CR>
 tnoremap <A-t> <C-\><C-n>:call TermToggle(10)<CR>
 
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48:2;%lu;%lu;%lum"
 
 
 " ----- LightLine Buffer -----
