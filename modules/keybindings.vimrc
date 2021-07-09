@@ -79,6 +79,8 @@ nnoremap Y "+y
 inoremap <expr> <C-Tab> pumvisible() ? "\<C-n>" : "\<C-Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+
+
 " ----- Nerd Tree -----"
 "  autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -102,16 +104,6 @@ autocmd vimenter * silent! lcd %:p:h
 
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
-" ------ Fugitive -----
-"nnoremap <leader>gb  :Gblame<CR>
-"nnoremap <leader>gc  :Gcommit<CR>
-"nnoremap <leader>gca :Gcommit -aS<CR>
-"nnoremap <leader>gd  :Gdiff<CR>
-"nnoremap <leader>gl  :Gpull<CR>
-"nnoremap <leader>gp  :Gpush<CR>
-"nnoremap <leader>gr  :Gread<CR>
-"nnoremap <leader>gs  :Gstatus<CR>
-"nnoremap <leader>gw  :Gwrite<CR>
 
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gJ :diffget //2<CR>
@@ -136,3 +128,13 @@ tnoremap :bd! <C-\><C-n>:q!<CR>
 "noremap <Leader>q' ciw''<Esc>P
 
 
+" ------ Fugitive -----
+"nnoremap <leader>gb  :Gblame<CR>
+"nnoremap <leader>gc  :Gcommit<CR>
+"nnoremap <leader>gca :Gcommit -aS<CR>
+"nnoremap <leader>gd  :Gdiff<CR>
+"nnoremap <leader>gl  :Gpull<CR>
+"nnoremap <leader>gp  :Gpush<CR>
+"nnoremap <leader>gr  :Gread<CR>
+"nnoremap <leader>gs  :Gstatus<CR>
+"nnoremap <leader>gw  :Gwrite<CR>

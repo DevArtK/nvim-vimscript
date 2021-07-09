@@ -7,3 +7,25 @@ snippet c.e "Console.error"
 console.error($1);
 $2
 endsnippet
+
+snippet a.f "Arrow Funcion"
+const ${1:var} = (${2:param}) => {
+	${3:body}
+};
+$4
+endsnippet
+
+snippet 4loop "For loop"
+for (let i = ${1:idx}; i < ${2:loop over}; i++) {
+	${3:body}
+}
+endsnippet
+
+
+snippet cc "Class Constructor"
+class ${1:class name} {
+	constructor(${2:fields}) {
+		this.${3:field}
+	}
+}
+endsnippet

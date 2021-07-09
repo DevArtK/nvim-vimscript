@@ -25,6 +25,7 @@ local on_attach = function(client, bufnr)
   --require'diagnostic'.on_attach(client, bufnr)
   require'completion'.on_attach(client, bufnr)
   require'nvim-autopairs'.setup()
+  require'colorizer'.setup()
 
   -- Nvim Pairs
   local remap = vim.api.nvim_set_keymap

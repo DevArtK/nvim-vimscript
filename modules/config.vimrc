@@ -81,4 +81,3 @@ if has('nvim')
   set inccommand=split
 endif
 
-lua require'colorizer'.setup()

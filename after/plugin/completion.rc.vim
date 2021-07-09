@@ -26,3 +26,6 @@ let g:completion_trigger_character = ['.', '::']
 
 let g:completion_trigger_keyword_length = 3 " default = 1
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
