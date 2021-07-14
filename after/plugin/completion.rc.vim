@@ -19,7 +19,7 @@ let g:completion_sorting = "alphabet"
 let g:completion_matching_smart_case = 1
 " let g:completion_matching_ignore_case = 1
 let g:completion_enable_auto_paren = 1
-let g:completion_enable_auto_signature = 0
+let g:completion_enable_auto_signature = 1
 let g:completion_enable_snippet = 'UltiSnips'
 
 let g:completion_trigger_character = ['.', '::']

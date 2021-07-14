@@ -2,9 +2,10 @@ if !exists('g:lspconfig')
   finish
 endif
 
+lua require'colorizer'.setup()
 
 lua << EOF
---vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("debug")
 EOF
 
 lua << EOF
@@ -25,7 +26,6 @@ local on_attach = function(client, bufnr)
   --require'diagnostic'.on_attach(client, bufnr)
   require'completion'.on_attach(client, bufnr)
   require'nvim-autopairs'.setup()
-  require'colorizer'.setup()
 
   -- Nvim Pairs
   local remap = vim.api.nvim_set_keymap
@@ -116,7 +116,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "bashls", "html", "cssls",  }
+local servers = { "pyright", "rust_analyzer", "tsserver", "bashls", "html", "cssls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -196,13 +196,7 @@ formatFiletypes = {
   markdown = 'prettier',
     }
   }
+
 }
-
-
-
-
-
-
-
 EOF
 

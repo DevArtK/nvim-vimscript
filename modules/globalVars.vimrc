@@ -14,6 +14,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 "Opens Directory Search on current level
 
 autocmd BufEnter * lcd %:p:h
+au BufReadPost *.conf set syntax=ini
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -90,3 +91,7 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 " ---------------------------------------------------------------------
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+

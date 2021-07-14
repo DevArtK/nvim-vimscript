@@ -9,6 +9,11 @@ Plug 'airblade/vim-gitgutter'
 " ----- Emmet -----
 Plug 'mattn/emmet-vim'
 
+" ----- Markdown Preview -----
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" ----- ASCII Diagrams -----
+Plug 'jbyuki/venn.nvim'
+
 " ----- Starify - Start Menu -----
 Plug 'mhinz/vim-startify'
 
