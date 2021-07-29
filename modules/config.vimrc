@@ -26,7 +26,9 @@ set signcolumn=yes
 
 set tabstop=2 softtabstop=2 shiftwidth=2                                                   
 set smarttab
-set autoindent smartindent expandtab
+set autoindent 
+"set smartindent 
+set expandtab
 set number relativenumber                                                                                      
 set linebreak                                                                                                  
 set ruler                                                                                                      

@@ -5,7 +5,7 @@ endif
 lua require'colorizer'.setup()
 
 lua << EOF
-vim.lsp.set_log_level("debug")
+--vim.lsp.set_log_level("debug")
 EOF
 
 lua << EOF
@@ -116,7 +116,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "bashls", "html", "cssls" }
+local servers = { "pyright", "rust_analyzer", "tsserver", "bashls", "html", "cssls", "dockerls", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -130,12 +130,58 @@ end
 
 nvim_lsp.flow.setup {
   on_attach = on_attach
-  }
+}
+
+
+
+nvim_lsp.pylsp.setup{
+  on_attach = on_attach
+}
+
+
+
+nvim_lsp.pyright.setup{
+  on_attach = on_attach,
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" }
+--  root_dir = function(filename)
+--          return util.root_pattern(unpack(root_files))(filename) or util.path.dirname(filename)
+--        end,
+--    settings = {
+--     python = {
+--        analysis = {
+--          autoSearchPaths = true,
+--          diagnosticMode = "workspace",
+--          useLibraryCodeForTypes = true
+--        }
+--      }
+--    }
+}
+
+
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
-  }
+}
+
+
+
+
+nvim_lsp.dockerls.setup {
+  on_attach = on_attach,
+  cmd = { "docker-langserver", "--stdio" },
+  filetypes = { "Dockerfile", "dockerfile" },
+--  root_dir = root_pattern("Dockerfile"),
+
+--  local configs = require 'lspconfig/configs'
+--  local util = require 'lspconfig/util'
+--
+--local server_name = "dockerls"
+--  local bin_name = "docker-langserver"
+}
+
+
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -196,7 +242,87 @@ formatFiletypes = {
   markdown = 'prettier',
     }
   }
-
 }
+
+
+USER = vim.fn.expand('$USER')
+
+local sumneko_root_path = ""
+local sumneko_binary = ""
+
+if vim.fn.has("mac") == 1 then
+    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua/servers/lua-language-server"
+    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua/servers/lua-language-server/bin/macOS/lua-language-server"
+elseif vim.fn.has("unix") == 1 then
+    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua/servers/lua-language-server"
+    sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua/servers/lua-language-server/bin/Linux/lua-language-server"
+else
+    print("Unsupported system for sumneko")
+end
+
+require'lspconfig'.sumneko_lua.setup {
+    on_attach = on_attach,
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+                -- Setup your lua path
+                path = vim.split(package.path, ';')
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'}
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+              enable = false,
+            },
+        },
+    },
+}
+
+
+require'lspconfig'.vimls.setup{
+  on_attach = on_attach,
+  cmd = { "vim-language-server", "--stdio" },
+  filetypes = { "vim" },
+  init_options = {
+    diagnostics = {
+      enable = true
+    },
+  indexes = {
+    count = 3,
+    gap = 100,
+    projectRootPatterns = { "runtime", "nvim", ".git", "autoload", "plugin" },
+    runtimepath = true
+  },
+  iskeyword = "@,48-57,_,192-255,-#",
+      runtimepath = "",
+      suggest = {
+        fromRuntimepath = true,
+        fromVimruntime = true
+      },
+      vimruntime = ""
+    },
+--    root_dir = function(fname)
+--          return util.find_git_ancestor(fname) or vim.fn.getcwd()
+--        end,
+}
+
+
+
+require'lspconfig'.yamlls.setup{
+  on_attach = on_attach,
+  cmd = { "yaml-language-server", "--stdio" },
+  filetypes = { "yaml" },
+--  root_dir = root_pattern(".git", vim.fn.getcwd())
+}
+
 EOF
 

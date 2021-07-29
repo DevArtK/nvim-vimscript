@@ -1,0 +1,25 @@
+1. Install ninja
+
+2. Make sure C++17 is on system
+
+3. Clone Lua LS Repo  :
+> git clone https://github.com/sumneko/lua-language-server
+
+> cd lua-language-server
+
+>  git submodule update --init --recursive
+
+
+4. Build  
+
+> cd 3rd/luamake
+
+> compile/install.sh
+
+> cd ../..
+
+> ./3rd/luamake/luamake rebuild
+
+5. Run
+
+> ./bin/Linux/lua-language-server -E ./main.lua

@@ -51,8 +51,8 @@ map <C-J> :bprev <CR>
 map <C-K> :bnext <CR>
 map <C-L> :bd <CR>
 
-nnoremap <silent> <leader>+ :vertical resize +5<CR>
-nnoremap <silent> <leader>- :vertical resize -5<CR>
+nnoremap <silent> <leader>+ :vertical resize +10<CR>
+nnoremap <silent> <leader>- :vertical resize -10<CR>
 
 nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
@@ -60,7 +60,7 @@ nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
 " Netrw
-nnoremap <leader><leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+"nnoremap <leader><leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>U :UndoTreeToggle<CR>
@@ -96,7 +96,7 @@ endfunction
 
 " = = = = = AutoCMD = = = = =
 " ----- Vertically Center Upon Insert -----
-autocmd InsertEnter * norm zz
+"autocmd InsertEnter * norm zz
 
 " Set the pwd to current fold | folder/file given when launching vim
 autocmd vimenter * silent! lcd %:p:h
