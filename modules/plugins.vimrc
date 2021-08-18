@@ -45,8 +45,9 @@ Plug 'kshenoy/vim-signature'
 "Plug 'sheerun/vim-polyglot'
 
 "----- File Directory -----
-Plug 'preservim/nerdtree' |
-    \ Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'preservim/nerdtree' |
+    "\ Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'hankchiutw/nerdtree-ranger.vim'
 Plug 'preservim/nerdcommenter'
 
 " ----- VimSpector -----
@@ -61,7 +62,6 @@ Plug 'honza/vim-snippets'
 " ----- FZF Finder -----
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'hankchiutw/nerdtree-ranger.vim'
 
 " -----  Rainbow Bracket -----
 Plug 'p00f/nvim-ts-rainbow'
@@ -92,6 +92,11 @@ if has("nvim")
 
     " ----- LSPs -----
     Plug 'mfussenegger/nvim-jdtls'
+    
+    " ----- Indent Guides -----
+    Plug 'lukas-reineke/indent-blankline.nvim'
+
+    Plug 'kyazdani42/nvim-tree.lua'
 
 endif
 

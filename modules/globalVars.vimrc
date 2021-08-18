@@ -95,3 +95,7 @@ command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | 
 
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
+function! OpenTerminal()
+  split term://fish
+  resize 10
+endfunction

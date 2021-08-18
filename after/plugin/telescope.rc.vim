@@ -31,12 +31,12 @@ require('telescope').setup{
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {"./node_modules/*", "node_modules"},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    path_display = true,
     winblend = 0,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
     use_less = true,
+    path_display = {},
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -46,6 +46,12 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+
+
+
+
+
 EOF
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>

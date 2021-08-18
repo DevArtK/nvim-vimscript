@@ -82,15 +82,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " ----- Nerd Tree -----"
-"  autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+""  autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"map <C-n> :NERDTreeToggle<CR>
 
-function! ToggleNERDTree()
-    NERDTreeToggle
-    silent NERDTreeMirror
-endfunction
+"function! ToggleNERDTree()
+    "NERDTreeToggle
+    "silent NERDTreeMirror
+"endfunction
 
 
 
@@ -116,6 +116,8 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap :bd! <C-\><C-n>:q!<CR>
 
 
+" Clear highlighting
+nnoremap <CR> :noh<CR><CR>
 "----- ----- Visual Mode Maps
 "vnoremap <A-J> :m '>+1<CR>gv=gv
 "vnoremap <A-K> :m '<-2<CR>gv=gv

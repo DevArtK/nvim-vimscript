@@ -26,6 +26,10 @@ local on_attach = function(client, bufnr)
   --require'diagnostic'.on_attach(client, bufnr)
   require'completion'.on_attach(client, bufnr)
   require'nvim-autopairs'.setup()
+  require("indent_blankline").setup {
+      char = "|",
+      buftype_exclude = {"terminal"},
+  }
 
   -- Nvim Pairs
   local remap = vim.api.nvim_set_keymap
@@ -127,6 +131,14 @@ for _, lsp in ipairs(servers) do
 end
 
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.cssls.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
 
 nvim_lsp.flow.setup {
   on_attach = on_attach
@@ -162,7 +174,11 @@ nvim_lsp.pyright.setup{
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  init_options = {
+      hostInfo = "neovim"
+    },
+  --root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
 }
 
 
