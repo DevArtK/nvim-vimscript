@@ -8,9 +8,7 @@ let g:lightline = {
       \
       \   'left': [ [ 'mode', 'lineinfo' ],
       \    [ 'readonly', 'modified' ] ],
-      \
-      "\   'right': [ ['gitbranch'],[ 'filetype'], ['cocstatus'] ]
-      \   'right': [ [  'filename', 'filetype'], ['cocstatus'] ]
+      \   'right': [ ['gitbranch'],[ 'filetype'] ]
       \   
       \  },
       \ 'tabline': {

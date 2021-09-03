@@ -14,9 +14,13 @@ set background=dark
 colorscheme gruvbox-material
 let g:gruvbox_material_background = 'hard'
 
-highlight LineNr      term=bold cterm=bold ctermfg=2 guifg=#4379a0
-highlight CursorLineNr guifg=#f39d62
+"highlight CursorLineNr guifg=#f39d62
 highlight ColorColumn ctermbg=0 guibg=#1C201F
+highlight LineNr      term=bold cterm=bold ctermfg=2 guifg=#4379a0
+
+let g:gruvbox_material_visual = 'grey background'
+let g:gruvbox_material_cursor = 'yellow'
+"let g:lightline.colorscheme = 'gruvbox_material'
 
 
 

@@ -78,13 +78,13 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 " File types ---------------------------------------------------------------------
 "
 " JavaScript
-au BufNewFile,BufRead *.es6 setf javascript
-" TypeScript
-au BufNewFile,BufRead *.tsx setf typescriptreact
-" Markdown
-au BufNewFile,BufRead *.md set filetype=markdown
-" Flow
-au BufNewFile,BufRead *.flow set filetype=javascript
+"au BufNewFile,BufRead *.es6 setf javascript
+"" TypeScript
+"au BufNewFile,BufRead *.tsx setf typescriptreact
+"" Markdown
+"au BufNewFile,BufRead *.md set filetype=markdown
+"" Flow
+"au BufNewFile,BufRead *.flow set filetype=javascript
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
@@ -93,7 +93,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 " ---------------------------------------------------------------------
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
-au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+"au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
 function! OpenTerminal()
   split term://fish

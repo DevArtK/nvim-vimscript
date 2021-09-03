@@ -126,7 +126,7 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-      }
+      },
     }
 end
 
@@ -206,7 +206,7 @@ nvim_lsp.diagnosticls.setup {
     linters = {
       eslint = {
         command = 'eslint_d',
-        rootPatterns = { '.git' },
+        rootPatterns = { '.git', 'package.json' },
         debounce = 100,
         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
         sourceName = 'eslint_d',
@@ -218,44 +218,44 @@ nvim_lsp.diagnosticls.setup {
       endColumn = 'endColumn',
       message = '[eslint] ${message} [${ruleId}]',
       security = 'severity'
+        },
+      securities = {
+        [2] = 'error',
+        [1] = 'warning'
+        }
       },
-    securities = {
-      [2] = 'error',
-      [1] = 'warning'
+    },
+
+    filetypes = {
+      javascript = 'eslint',
+      javascriptreact = 'eslint',
+      typescript = 'eslint',
+      typescriptreact = 'eslint',
+    },
+
+    formatters = {
+      eslint_d = {
+        command = 'eslint_d',
+        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+        rootPatterns = { '.git' },
+      },
+      prettier = {
+        command = 'prettier',
+        args = { '--stdin-filepath', '%filename' }
       }
     },
-  },
 
-filetypes = {
-  javascript = 'eslint',
-  javascriptreact = 'eslint',
-  typescript = 'eslint',
-  typescriptreact = 'eslint',
-  },
-
-formatters = {
-  eslint_d = {
-    command = 'eslint_d',
-    args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-    rootPatterns = { '.git' },
-    },
-  prettier = {
-    command = 'prettier',
-    args = { '--stdin-filepath', '%filename' }
-    }
-  },
-
-formatFiletypes = {
-  css = 'prettier',
-  javascript = 'eslint_d',
-  javascriptreact = 'eslint_d',
-  json = 'prettier',
-  scss = 'prettier',
-  less = 'prettier',
-  typescript = 'eslint_d',
-  typescriptreact = 'eslint_d',
-  json = 'prettier',
-  markdown = 'prettier',
+    formatFiletypes = {
+      css = 'prettier',
+      javascript = 'eslint_d',
+      javascriptreact = 'eslint_d',
+      json = 'prettier',
+      scss = 'prettier',
+      less = 'prettier',
+      typescript = 'eslint_d',
+      typescriptreact = 'eslint_d',
+      json = 'prettier',
+      markdown = 'prettier',
     }
   }
 }

@@ -60,10 +60,10 @@ nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
 " Netrw
-"nnoremap <leader><leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader><leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>U :UndoTreeToggle<CR>
+"nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>U :UndotreeToggle<CR>
 
 "" --- EASY MOTION REMAPS ---
 map <leader><leader>w <Plug>(easymotion-bd-w)
@@ -102,8 +102,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 autocmd vimenter * silent! lcd %:p:h
 
 
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>+ :vertical resize +15<CR>
+nnoremap <Leader>- :vertical resize -15<CR>
 
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gJ :diffget //2<CR>
@@ -118,6 +118,11 @@ tnoremap :bd! <C-\><C-n>:q!<CR>
 
 " Clear highlighting
 nnoremap <CR> :noh<CR><CR>
+
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+nnoremap <Leader><up> :bd<CR>
+
 "----- ----- Visual Mode Maps
 "vnoremap <A-J> :m '>+1<CR>gv=gv
 "vnoremap <A-K> :m '<-2<CR>gv=gv
@@ -140,3 +145,4 @@ nnoremap <CR> :noh<CR><CR>
 "nnoremap <leader>gr  :Gread<CR>
 "nnoremap <leader>gs  :Gstatus<CR>
 "nnoremap <leader>gw  :Gwrite<CR>
+

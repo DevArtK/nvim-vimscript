@@ -46,16 +46,10 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
-
-
-
-
-
-
 EOF
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>
-nnoremap <leader>fF <cmd>lua require('telescope.builtin').file_browser({)<cr>
+nnoremap <leader>fF <cmd>lua require('telescope.builtin').file_browser({hidden=true})<cr>
 
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fG <cmd>lua require('telescope.builtin').git_files()<cr>

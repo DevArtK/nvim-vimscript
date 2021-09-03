@@ -1,5 +1,5 @@
 let g:nvim_tree_side = 'left' "left by default
-let g:nvim_tree_width = 40 "30 by default, can be width_in_columns or 'width_in_percent%'
+let g:nvim_tree_width = 30 "30 by default, can be width_in_columns or 'width_in_percent%'
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
 let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
@@ -42,7 +42,7 @@ let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 0,
     \ 'files': 0,
-    \ 'folder_arrows': 0,
+    \ 'folder_arrows': 1,
     \ }
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
@@ -52,42 +52,48 @@ let g:nvim_tree_show_icons = {
 
 " default will show icon by default if no icon is provided
 " default shows no icon by default
+" Staged : ✓
+" ⭘
+
 let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   },
-    \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
-    \   }
-    \ }
+  \ 'default': '',
+  \ 'symlink': '',
+  \ 'git': {
+  \   'unstaged': "✗",
+  \   'staged': "",
+  \   'unmerged': "",
+  \   'renamed': "➜ ",
+  \   'untracked': "",
+  \   'deleted': " ",
+  \   'ignored': "◌ "
+  \   },
+  \ 'folder': {
+  \   'arrow_open': "",
+  \   'arrow_closed': "",
+  \   'default': "",
+  \   'open': "",
+  \   'empty': "",
+  \   'empty_open': "",
+  \   'symlink': "",
+  \   'symlink_open': "",
+  \   },
+  \   'lsp': {
+  \     'hint': "",
+  \     'info': "",
+  \     'warning': "⚠",
+  \     'error': "",
+  \   }
+  \ }
 
 nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+"nnoremap <leader>r :NvimTreeRefresh<CR>
+"nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose and NvimTreeFocus are also available if you need them
 
-"set termguicolors " this variable must be enabled for colors to be applied properly
+set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue'
+
+
+
